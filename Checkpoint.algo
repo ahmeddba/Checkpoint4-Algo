@@ -1,0 +1,21 @@
+FUNCTION is_palindrome(word: STRING, n,i :INTEGER) : BOOLEAN
+//i is the counter and should be passed as 0.
+//n is length of word.
+
+BEGIN
+   if n <= 1:
+    // Base case: an empty word or a word containing a single character is a palindrome
+        return True
+   elseif n == 2:
+        //Check if the first and second characters are equal for a word of length 2
+        return word[0] == word[1]
+    else:
+     //Recursive case: check if the first and last characters are equal
+        if word[i] != word[i + n - 1]:
+            return False
+            else :
+        //If the first and last characters are equal, recursively check the rest of the word
+        return is_palindrome(word, i + 1, n - 2)
+   END_IF
+
+END
